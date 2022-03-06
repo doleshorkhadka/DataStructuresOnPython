@@ -8,7 +8,6 @@
         {
         'A': [70, 100]
         }
-    3.
 '''
 
 def radio_ds(name) :
@@ -65,8 +64,7 @@ def result_sch():
                 result[subject] = key
             
     print('Your grades are :\n {}'.format(result))
-
-
+    
 if __name__ == '__main__':
     radio_ds('44')
     result_sch()
