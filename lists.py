@@ -1,89 +1,20 @@
 
-info = '''
-    1. radio_df -- working with dictionary 
-        {
-        '89.1 MHz': 'BBC Radio 2',
-        }
-    2. rgb_finder -- working with 2D list && use of List_comprehension([expression for item in list])
-         [
-        ['red', 'F00'],
-        ]
-    3. result_sch -- working with value of lists in dictionary 
-        {
-        'A': [70, 100]
-        }
-    4. football_res -- working with value of dictionaries in list
+'''
+    1. football_res -- working with value of dictionaries in list
         [
         {'Austria': 0, 'Hungary': 2}
         ]
-    5. sort -- sorting dictionary by value and sorting list
-    6. bill_splitting -- working with list of lists (different data types in lists)
+    2. sort -- sorting dictionary by value and sorting list
+    3. rgb_finder -- working with 2D list && use of List_comprehension([expression for item in list])
+         [
+        ['red', 'F00'],
+        ]
+    4. bill_splitting -- working with list of lists (different data types in lists)
         [
         ['Tom', 'Calamari', 6.00]
         ]
 '''
 
-
-
-def radio_ds(name) :
-    result = []
-    fm_frequencies = {
-        '89.1 MHz': 'BBC Radio 2',
-        '91.3 MHz': 'BBC Radio 3',
-        '93.5 MHz': 'BBC Radio 4',
-        '94.9 MHz': 'BBC London',
-        '95.8 MHz': 'Capital FM',
-        '97.3 MHz': 'LBC',
-        '98.8 MHz': 'BBC Radio 1',
-        '100.0 MHz': 'Kiss FM',
-        '100.9 MHz': 'Classic FM',
-        '105.4 MHz': 'Magic',
-        '105.8 MHz': 'Virgin',
-        '106.2 MHz': 'Heart 106.2',
-    }
-
-    for key,value in fm_frequencies.items():
-        result.append(fm_frequencies[key])
-        if name in  value.lower().strip(' '):
-            print('You are currently listening to {} at {}'.format(value,key))
-            return None
-    print('I know about {} FM radio stations \n {}'.format(len(fm_frequencies),result))
-    
-def rgb_finder(key):
-    colours = [
-    ['red', 'F00'],
-    ['yellow', 'FF0'],
-    ['green', '0F0'],
-    ['cyan', '0FF'],
-    ['blue', '00F'],
-    ['magenta', 'F0F'],
-    ]
-    result = [x for x in colours if x[0] is key]   
-    print('The rgb code for {} is {}'.format(key,result[0][1]))
-
-def result_sch():
-    subjects = ['Maths', 'Philosophy', 'Geography', 'Music']
-    grade_boundaries = {
-        'A': [70, 100],
-        'B': [60, 69],
-        'C': [50, 59],
-        'D': [40, 49],
-        'E': [30, 39],
-        'F': [0, 29],
-    }
-    marks = []
-    result = {}
-    print('Enter your marks in the following subjects:')
-    for index , subject in enumerate(subjects):
-        marks.append(int(input('What marks did you get in {} ?\n ->'.format(subject))))
-        if marks[index] > 100 or marks[index] < 0:
-            marks[index] = int(input('Not valid enter again! What marks did you get in {} ?\n ->'.format(subject)))
-        for key,value in grade_boundaries.items():
-            if marks[index] > value[0] and marks[index] < value[1]:
-                result[subject] = key
-            
-    print('Your grades are :\n {}'.format(result))
-            
 def football_res():
     results = [
         {'Austria': 0, 'Hungary': 2},
@@ -170,6 +101,18 @@ def sort(args):
     else:
         print('Function takes list or dictionary only.')
 
+def rgb_finder(key):
+    colours = [
+    ['red', 'F00'],
+    ['yellow', 'FF0'],
+    ['green', '0F0'],
+    ['cyan', '0FF'],
+    ['blue', '00F'],
+    ['magenta', 'F0F'],
+    ]
+    result = [x for x in colours if x[0] is key]   
+    print('The rgb code for {} is {}'.format(key,result[0][1]))
+
 def bill_splitting(keyname):
     bill_items = [
     ['Tom', 'Calamari', 6.00],
@@ -199,17 +142,7 @@ def bill_splitting(keyname):
 
     print(' {} should pay {} '.format(keyname,result[keyname]))
 
-
-
-
-
 if __name__ == '__main__':
-    # radio_ds('radio 4')
-    # rgb_finder('red')
-    # result_sch()
-    # football_res()
-    # bill_splitting('tim')
-    print(info)
-    
-
-
+    football_res()
+    rgb_finder('yellow')
+    bill_splitting('tim')
